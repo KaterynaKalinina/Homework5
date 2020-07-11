@@ -16,7 +16,6 @@ console.log(pow(2,3));
 
 function runTheGame() {
     let randomNum = Math.round(Math.random() * 10);
-    console.log(randomNum);
     let userNumber;
 
     if (userNumber === randomNum) return true;
@@ -42,7 +41,8 @@ function gameRusults(){
 
 gameRusults();
 
-// Trying to find another solution to the second task, but I haven't figured it out so far
+
+// Another possible solution, but there is a thing I can't figure out
 
 function run() {
     let userNumber = prompt('Enter a number up to 10', '');
@@ -61,19 +61,19 @@ function processResults() {
     console.log(randomNum);
     let result = run();
 
- 
+    if (result === randomNum) {
+        alert('Congrats! You won! Game is over!');
+    } else if (result === false) {
+        alert('Game is over!');
+    };
 
-    while(result !== randomNum) {
-        if (result === false) {
-            alert('Game is over!');
-        } else if (result === randomNum) {
-            alert('Congrats! You won! Game is over!');
-        } else if (result === undefined) {
+    while(result !== randomNum && result !== false){
+        if (result === undefined) {
             alert('Sorry, we need a number');
-        };
+            };
+
         result = run();
-};
- 
+    };
 
 };
 
